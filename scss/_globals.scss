@@ -1,0 +1,140 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font-family: $ff-primary;
+  font-weight: $fw-regular;
+  font-size: $fs-300;
+  color: $grayishBlue;
+  overflow-x: hidden;
+
+  @include breakpoint-up(large) {
+    font-size: $fs-400;
+  }
+
+  &[data-noscroll] {
+    overflow: hidden;
+  }
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: $fw-light;
+  line-height: 1.15;
+  color: $darkBlue;
+}
+
+h1 {
+  font-size: $fs-800;
+  margin-bottom: $spacing-300;
+
+  @include breakpoint-up(large) {
+    font-size: $fs-900;
+    margin-bottom: $spacing-500;
+  }
+}
+
+h2 {
+  font-size: $fs-700;
+
+  @include breakpoint-up(large) {
+    font-size: $fs-800;
+  }
+}
+
+p {
+  line-height: 1.5;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style-type: none;
+}
+
+a,
+a:visited,
+a:hover {
+  text-decoration: none;
+}
+
+.button {
+  display: inline-block;
+  padding: 0.875rem 2.1875rem;
+  background-image: linear-gradient(to right, $limeGreen, $brightCyan);
+  border: 0;
+  border-radius: 100vmax;
+  cursor: pointer;
+  color: $white;
+  font-weight: $fw-bold;
+  font-size: $fs-200;
+  transition: all 250ms ease-in-out;
+
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
+// helper classes
+.flex {
+  display: flex;
+
+  &-jc-sb {
+    justify-content: space-between;
+  }
+
+  &-justify-center {
+    justify-content: center;
+  }
+
+  &-align-center {
+    align-items: center;
+  }
+
+  &-direction-column {
+    flex-direction: column;
+  }
+}
+
+.hide-for-mobile {
+  @include breakpoint-down(medium) {
+    display: none;
+  }
+}
+
+.hide-for-desktop {
+  @include breakpoint-up(large) {
+    display: none;
+  }
+}
+
+.container {
+  max-width: 69.375rem;
+  margin: 0 auto;
+}
+
+.spacer {
+  padding-top: 4.375rem;
+  padding-right: 1.5rem;
+  padding-bottom: 4.375rem;
+  padding-left: 1.5rem;
+
+  @include breakpoint-up(large) {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+
+  @include breakpoint-up(xlarge) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
