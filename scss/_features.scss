@@ -1,0 +1,84 @@
+.features {
+  background-color: $lightGrayishBlue;
+  text-align: center;
+
+  @include breakpoint-up(medium) {
+    text-align: left;
+  }
+}
+
+.feature {
+  &__intro {
+    margin-bottom: 3.5rem;
+
+    h2 {
+      margin-bottom: $spacing-200;
+    }
+
+    @include breakpoint-up(medium) {
+      p {
+        max-width: 60%;
+      }
+    }
+
+    @include breakpoint-up(large) {
+      display: block;
+
+      h2 {
+        margin-bottom: $spacing-500;
+      }
+
+      p {
+        font-size: $fs-500;
+      }
+    }
+  }
+
+  &__grid {
+    @include breakpoint-up(medium) {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__item {
+    padding: 0.9375rem;
+
+    @include breakpoint-up(medium) {
+      flex-basis: 50%;
+    }
+
+    @include breakpoint-up(large) {
+      flex: 1;
+    }
+  }
+
+  &__icon {
+    margin-bottom: $spacing-500;
+
+    @include breakpoint-up(large) {
+      margin-bottom: $spacing-900;
+    }
+  }
+
+  &__title {
+    font-size: $fs-600;
+    color: $darkBlue;
+    margin-bottom: $spacing-300;
+
+    @include breakpoint-up(large) {
+      font-size: 1.5rem;
+      margin-bottom: $spacing-600;
+    }
+  }
+
+  &__description {
+    font-size: $fs-300;
+    max-width: 27rem;
+    margin-inline: auto;
+
+    @include breakpoint-up(large) {
+      font-size: $fs-400;
+    }
+  }
+}
