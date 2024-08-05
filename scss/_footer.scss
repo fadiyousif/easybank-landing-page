@@ -29,6 +29,7 @@
 
   &__socials {
     gap: $spacing-300;
+    justify-content: center;
 
     @include breakpoint-down(medium) {
       margin-bottom: $spacing-700;
